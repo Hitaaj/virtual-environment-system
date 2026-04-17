@@ -1,0 +1,86 @@
+-- Professor Table
+CREATE TABLE Professor (
+    prof_id INT PRIMARY KEY,
+    prof_speciality VARCHAR(255),
+    prof_rank VARCHAR(50),
+    prof_name VARCHAR(100),
+    prof_fname VARCHAR(100),
+    prof_initial CHAR(1),
+    prof_email VARCHAR(255),
+    school_code INT,
+    FOREIGN KEY (school_code) REFERENCES School(school_code)
+);
+
+-- School Table
+CREATE TABLE School (
+    school_code INT PRIMARY KEY,
+    school_name VARCHAR(255),
+    admin_prof_id INT,
+    FOREIGN KEY (admin_prof_id) REFERENCES Professor(prof_id)
+);
+
+-- Department Table
+CREATE TABLE Department (
+    department_id INT PRIMARY KEY,
+    dept_name VARCHAR(255),
+    school_code INT,
+    admin_prof_id INT,
+    FOREIGN KEY (school_code) REFERENCES School(school_code),
+    FOREIGN KEY (admin_prof_id) REFERENCES Professor(prof_id)
+);
+
+-- Course Table
+CREATE TABLE Course (
+    crs_code INT PRIMARY KEY,
+    crs_title VARCHAR(255),
+    crs_description TEXT,
+    crs_credit INT,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES Department(department_id)
+);
+
+-- Class Table
+CREATE TABLE Class (
+    class_code INT PRIMARY KEY,
+    class_section VARCHAR(50),
+    class_time DATETIME,
+    prof_id INT,
+    crs_code INT,
+    room_code INT,
+    FOREIGN KEY (prof_id) REFERENCES Professor(prof_id),
+    FOREIGN KEY (crs_code) REFERENCES Course(crs_code),
+    FOREIGN KEY (room_code) REFERENCES Room(room_code)
+);
+
+-- Student Table
+CREATE TABLE Student (
+    stu_num INT PRIMARY KEY,
+    stu_name VARCHAR(100),
+    stu_fname VARCHAR(100),
+    stu_initial CHAR(1),
+    stu_email VARCHAR(255)
+);
+
+-- Class_Student Table (Many-to-Many relationship between Class and Student)
+CREATE TABLE Class_Student (
+    class_code INT,
+    stu_num INT,
+    PRIMARY KEY (class_code, stu_num),
+    FOREIGN KEY (class_code) REFERENCES Class(class_code),
+    FOREIGN KEY (stu_num) REFERENCES Student(stu_num)
+);
+
+-- Room Table
+CREATE TABLE Room (
+    room_code INT PRIMARY KEY,
+    room_type VARCHAR(50),
+    bldg_code INT,
+    FOREIGN KEY (bldg_code) REFERENCES Building(bldg_code)
+);
+
+-- Building Table
+CREATE TABLE Building (
+    bldg_code INT PRIMARY KEY,
+    bldg_name VARCHAR(255),
+    bldg_location VARCHAR(255)
+);

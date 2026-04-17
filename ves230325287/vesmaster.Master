@@ -1,0 +1,227 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="vesmaster.master.cs" Inherits="ves230325287.vesmaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <title>VES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/slick/slick.css">
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="plugins/animate/animate.css">
+    <link rel="stylesheet" href="plugins/aos/aos.css">
+    <link rel="stylesheet" href="plugins/venobox/venobox.css">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="fixed-top header">
+            <div class="navigation w-100">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-light p-0">
+                        <a class="navbar-brand" href="default.aspx" runat="server">
+                            <img src="images/logo.png" alt="logo"></a>
+                        <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
+                            aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navigation">
+                            <ul class="navbar-nav ml-auto text-center">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="default.aspx" runat="server">Home</a>
+                                </li>
+                                <li class="nav-item @@aboutus">
+                                    <a class="nav-link" href="~/aboutus" runat="server">About</a>
+                                </li>
+                                <li class="nav-item dropdown view">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Courses</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                        <asp:Panel runat="server" ID="pnlcoursestu" Visible="false">
+                                            <a class="dropdown-item" href="~/viewcourses" runat="server">View Courses</a>
+                                            <a class="dropdown-item" href="~/searchcourses" runat="server">Search Courses</a>
+                                            <a class="dropdown-item" href="~/viewannouncement" runat="server">View Announcement</a>
+                                        </asp:Panel>
+
+
+                                        <asp:Panel runat="server" ID="pnlpost" Visible="false">
+                                            <a class="dropdown-item" href="~/tutorpostsmaterials" runat="server">Post Materials</a>
+                                            <a class="dropdown-item" href="~/coursemanagement" runat="server">Course Management</a>
+
+                                            <a class="dropdown-item" href="~/postannouncement" runat="server">Post Announcement</a>
+
+                                            <a class="dropdown-item" href="~/postassignments" runat="server">Post Assignments</a>
+                                        </asp:Panel>
+                                    </div>
+                                </li>
+                                </li>
+                               <li class="nav-item dropdown view">
+                                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                       aria-haspopup="true" aria-expanded="false">Events</a>
+                                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                       <a class="dropdown-item" href="~/calendar" runat="server">Calendar</a>
+                                       
+                                   <li class="nav-item dropdown view">
+                                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                           aria-haspopup="true" aria-expanded="false">Posts</a>
+                                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+                                             <asp:Panel runat="server" ID="pnltuevent" Visible="false">
+                                          <a class="dropdown-item" href="~/viewstudent" runat="server">View Student</a>
+                                            <a class="dropdown-item" href="~/postmarks" runat="server">Post Marks</a>
+                                                   </asp:Panel>
+
+                                             <asp:Panel runat="server" ID="pnlstuevent" Visible="false">
+                                           <a class="dropdown-item" href="~/viewtestimonials" runat="server">View Testimonials</a>
+                                           <a class="dropdown-item" href="~/posttestimonial" runat="server">Post Testimonial</a>
+                                           <a class="dropdown-item" href="~/viewmarks" runat="server">View Marks</a>
+                                           <a class="dropdown-item" href="~/subscribe" runat="server">Subscribe</a>
+                                           <a class="dropdown-item" href="~/managesubscriptions" runat="server">Manage Subscriptions</a>
+                                                 </asp:Panel>
+                                       </div>
+                                   </li>
+                                <li class="nav-item dropdown view">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Pages</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+
+                                        <a class="dropdown-item" href="~/teacher" runat="server">Teacher</a>
+                                        <a class="dropdown-item" href="~/teacherdetails" runat="server">Teacher Details</a>
+                                        <a class="dropdown-item" href="~/research" runat="server">Research</a>
+                                        <a class="dropdown-item" href="~/scholarship" runat="server">Scholarship</a>
+                                        <a class="dropdown-item" href="~/coursedetails" runat="server">Course Details</a>
+                                        <a class="dropdown-item" href="~/eventdetails" runat="server">Event Details</a>
+                                        <
+                                    </div>
+                                </li>
+                               
+                                <li class="nav-item dropdown view">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                        aria-haspopup="true" aria-expanded="false">Register</a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="submenu" href="tutor.html" runat="server">Tutor</a>
+                                        <div class="sub-submenu" aria-labelledby="tutorDropdown">
+                                            <a class="dropdown-item" href="~/register" runat="server">Sign up</a>
+                                            <a class="dropdown-item" href="~/login" runat="server">Log in</a>
+
+                                             <asp:Panel runat="server" ID="pnltuprofile" Visible="false">
+                                            <a class="dropdown-item" href="~/updatingprofile" runat="server">Update profile</a>
+                                                 </asp:Panel>
+                                        </div>
+                                        <a class="submenu" href="student.html" runat="server">Student</a>
+                                        <div class="sub-submenu" aria-labelledby="studentDropdown">
+                                            <a class="dropdown-item" href="~/sturegister" runat="server">Sign up</a>
+                                            <a class="dropdown-item" href="~/stulogin" runat="server">Log in</a>
+                                            <asp:Panel runat="server" ID="pnlprofile" Visible="false">
+                                              <a href="~/updateprofile" runat="server">Profile</a>
+                                                 </asp:Panel>
+                                        </div>
+                                        <a class="submenu" href="admin.html" runat="server">Admin</a>
+                                        <div class="sub-submenu" aria-labelledby="adminDropdown">
+                                            <a class="dropdown-item" href="~/admin" runat="server">Log in</a>
+                                        </div>
+                                        <li>
+                                            <!-- Menu to view user profile -->
+                                            
+
+                                              
+                                           
+                                        </li>
+                                        <li class="col-3">
+                                            <asp:Panel runat="server" ID="lgregis">
+                                                <asp:Label runat="server" ID="lbllgged"></asp:Label>
+                                                <asp:Button runat="server" OnClick="btnlgout_Click" ID="btnlgout" Text="Log out"
+                                                    CssClass="btn btn-outline-info" Visible="false" />
+                                            </asp:Panel>
+                                        </li>
+
+                                    </div>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <asp:ContentPlaceHolder ID="maincontent" runat="server"></asp:ContentPlaceHolder>
+
+        <footer>
+
+            <div class="footer bg-footer section border-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-8 mb-5 mb-lg-0">
+                            <a class="logo-footer" href="index.html">
+                                <img class="img-fluid mb-4" src="images/logo.png" alt="logo"></a>
+                            <ul class="list-unstyled">
+                                <li class="mb-2">Sector-4, Morabadi, Ranchi.</li>
+                                <li class="mb-2">+91-94157-19245</li>
+                                <li class="mb-2">admission@yourdomain.com</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+                            <h4 class="text-white mb-5">About Us</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a class="text-color" href="#">Overview</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">About</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Join Our Team</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Copyright</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Our Science</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+                            <h4 class="text-white mb-5">Our links</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a class="text-color" href="#">Course</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Event</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Gallery</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">FAQs</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Career</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+                            <h4 class="text-white mb-5">Other links</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a class="text-color" href="#">Support</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Privacy Policy</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Terms & Conditions</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Shipping & Refunds</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Pay Online</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 mb-md-0">
+                            <h4 class="text-white mb-5">Social Links</h4>
+                            <ul class="list-unstyled">
+                                <li class="mb-3"><a class="text-color" href="#">Facebook</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Twitter</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">LinkedIn</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Instagram</a></li>
+                                <li class="mb-3"><a class="text-color" href="#">Skype</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+
+    <asp:ContentPlaceHolder ID="scripts" runat="server"></asp:ContentPlaceHolder>
+    <script src="plugins/jQuery/jquery.min.js"></script>
+    <script src="plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="plugins/slick/slick.min.js"></script>
+    <script src="plugins/aos/aos.js"></script>
+    <script src="plugins/venobox/venobox.min.js"></script>
+    <script src="plugins/mixitup/mixitup.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
