@@ -83,12 +83,15 @@ The system provides personalized support based on students' needs, motivation, a
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/virtual-environment-system.git
-2. Open the project
+### 2. Open the project
+```bash
 Open the solution in Visual Studio 2022
-3. Configure the database
+### 3. Configure the database
+```bash
 Create a database named VESDB in SQL Server 2019
 Import the provided SQL file into VESDB
-4. Update connection string
+### 4. Update connection string
+```bash
 Open web.config
 Update the connection string with your SQL Server details
 
@@ -98,7 +101,8 @@ Example:
   <add name="VESDB"
        connectionString="Data Source=YOUR_SERVER;Initial Catalog=VESDB;Integrated Security=True" />
 </connectionStrings>
-5. Run the application
+### 5. Run the application
+```bash
 Press F5 or click Start in Visual Studio
 
 ⚠️ Make sure SQL Server is running before starting the application.
